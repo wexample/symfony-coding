@@ -1,0 +1,16 @@
+# Declares `code-input` to the design system registry.
+# formats, per format — whose move it is next:
+#   true            it is there, nothing is owed
+#   todo — a note   it is wanted and missing, someone should build it
+#   a sentence      it does without on purpose, and this is why
+#   left out        nobody has ruled yet, and the check will name it
+description: "A field that holds code, coloured by its grammar. The server one lays the editor over a real textarea, which stays the field; the vue one holds a model. Both are CodeMirror, dressed with the design system's tokens."
+formats:
+  style: true
+  template: true
+  script: true
+  vue: true
+  schema: todo
+  ai: todo
+  react: todo
+  flutter: todo

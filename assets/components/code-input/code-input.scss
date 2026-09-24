@@ -1,0 +1,42 @@
+@use '@wexample/symfony-design-system/css/mixins/field' as field;
+@use '@wexample/symfony-design-system/css/shapes/form';
+
+// The editor in the frame every field wears, so a form holding code reads as
+// one form. It grows with what it holds between two heights, then scrolls: a
+// short snippet does not sit in a tall empty box, and a long file does not push
+// the rest of the form off the page.
+.code-input--editor {
+  @include field.field-base;
+
+  overflow: hidden;
+  padding: 0;
+
+  &:focus-within {
+    @include field.field-focus;
+  }
+
+  .cm-editor {
+    max-height: var(--code-input-max-height, var(--size-7));
+  }
+
+  .cm-content,
+  .cm-gutter {
+    min-height: var(--code-input-min-height, var(--size-4));
+  }
+}
+
+.form--group.has-error .code-input--editor {
+  border: var(--border-focus);
+  border-color: var(--color-error-23);
+}
+
+// The textarea once the editor has taken its place: out of sight, but still in
+// the form and still focusable, so a required field left empty can be pointed
+// at by the browser.
+.code-input--source-aside {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}

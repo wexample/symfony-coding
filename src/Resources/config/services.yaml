@@ -1,0 +1,9 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Wexample\SymfonyCoding\:
+        resource: '../../{Command,Service,Twig}'
+        tags: ['controller.service_arguments']

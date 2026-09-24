@@ -1,0 +1,19 @@
+{#- A field that holds code. The textarea is the field: it is what the form
+    posts, what the rest of the form stack talks to, and what is left when no
+    script runs. The script lays the editor over it and keeps the two in step;
+    `language` names the grammar the editor colours it with. -#}
+<div {{ component_render_tag_attributes({ class: 'form--group code-input' }) }}>
+    {%- if label is defined and label -%}
+        <label class="form--label" for="{{ id }}">{{ label }}</label>
+    {%- endif -%}
+    <textarea
+        class="form--input code-input--source"
+        id="{{ id }}"
+        {% if name is defined %}name="{{ name }}"{% endif %}
+        {% if required is defined and required %}required{% endif %}
+        {% if placeholder is defined and placeholder %}placeholder="{{ placeholder }}"{% endif %}
+        rows="{{ rows|default(8) }}"
+        spellcheck="false"
+    >{% if value is defined %}{{ value }}{% endif %}</textarea>
+    <div class="code-input--editor" hidden></div>
+</div>

@@ -1,0 +1,10 @@
+{%- extends '@WexampleSymfonyDesignSystemBundle/components/_abstract/form-field/form-field.vue.twig' -%}
+
+{%- block field_control -%}
+    {# Client twin of code-input.html.twig: the editor in the frame a field
+       wears, and the value posted under the field's name when it has one. #}
+    <div class="code-input">
+        <input v-if="name" type="hidden" :name="name" :value="modelValue">
+        <div ref="editor" class="code-input--editor" :id="resolvedId"></div>
+    </div>
+{%- endblock -%}
