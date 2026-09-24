@@ -1,0 +1,41 @@
+{
+    "version": 3,
+    "elements": [
+        {
+            "key": "code-input",
+            "source": "WexampleSymfonyCodingBundle",
+            "description": "A field that holds code, coloured by its grammar. The server one lays the editor over a real textarea, which stays the field; the vue one holds a model. Both are CodeMirror, dressed with the design system's tokens.",
+            "formats": {
+                "style": [
+                    "@WexampleSymfonyCodingBundle/components/code-input/code-input.scss"
+                ],
+                "template": [
+                    "@WexampleSymfonyCodingBundle/components/code-input/code-input.html.twig"
+                ],
+                "vue": [
+                    "@WexampleSymfonyCodingBundle/components/code-input/code-input.vue.twig",
+                    "@WexampleSymfonyCodingBundle/components/code-input/code-input.vue"
+                ],
+                "script": [
+                    "@WexampleSymfonyCodingBundle/components/code-input/code-input.ts"
+                ]
+            },
+            "stances": {
+                "style": "expected",
+                "template": "expected",
+                "vue": "expected",
+                "script": "expected",
+                "schema": "todo",
+                "ai": "todo",
+                "react": "todo",
+                "flutter": "todo"
+            },
+            "notes": []
+        }
+    ],
+    "abstracts": [],
+    "shapes": [],
+    "unscanned_paths": [
+        "@WexampleSymfonyCodingBundle/js"
+    ]
+}
