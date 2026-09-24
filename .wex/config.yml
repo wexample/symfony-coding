@@ -1,0 +1,7 @@
+domain: symfony-coding.wex
+global:
+  name: symfony-coding
+  type: php-package
+  version: 1.0.0
+wex:
+  version: 6.0.136
