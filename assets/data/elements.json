@@ -31,11 +31,42 @@
                 "flutter": "todo"
             },
             "notes": []
+        },
+        {
+            "key": "console",
+            "source": "WexampleSymfonyCodingBundle",
+            "description": "What a shell printed, read back: commands after their prompt, their output under them, the terminal colours as the palette's. The vue one also takes lines as they come, from a live updates topic or from its parent.",
+            "formats": {
+                "style": [
+                    "@WexampleSymfonyCodingBundle/components/console/console.scss"
+                ],
+                "template": [
+                    "@WexampleSymfonyCodingBundle/components/console/console.html.twig"
+                ],
+                "vue": [
+                    "@WexampleSymfonyCodingBundle/components/console/console.vue",
+                    "@WexampleSymfonyCodingBundle/components/console/console.vue.twig"
+                ]
+            },
+            "stances": {
+                "style": "expected",
+                "template": "expected",
+                "vue": "expected",
+                "script": "waived",
+                "schema": "todo",
+                "ai": "todo",
+                "react": "todo",
+                "flutter": "todo"
+            },
+            "notes": {
+                "script": "it shows, and a server-rendered console has nothing to run"
+            }
         }
     ],
     "abstracts": [],
     "shapes": [],
     "unscanned_paths": [
+        "@WexampleSymfonyCodingBundle/common",
         "@WexampleSymfonyCodingBundle/js"
     ]
 }

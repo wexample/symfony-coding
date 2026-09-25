@@ -1,0 +1,24 @@
+{#- What a shell printed, read back: commands after their prompt, what they
+    wrote under them, colours and weight as the terminal gave them. Each line
+    is { kind, text } — `command`, `output`, `error` or `info` — or a string,
+    which is output. Read only: the vue twin also takes lines as they come. -#}
+{%- set lines = lines|default([]) -%}
+{%- set prompt = prompt|default('$') -%}
+<div class="console{{ class is defined and class ? ' ' ~ class }}"
+     role="log"
+     aria-label="{{ title|default('WexampleSymfonyCodingBundle.common.coding::console.label'|trans) }}"
+     {%- if max_height is defined and max_height %} style="--console-max-height: {{ max_height }}"{% endif %}>
+    {%- if title is defined and title -%}
+        <div class="console--bar"><span class="console--title">{{ title }}</span></div>
+    {%- endif -%}
+    <div class="console--body">
+        {%- for line in lines -%}
+            {%- set line = line is iterable ? line : { text: line } -%}
+            {%- set kind = line.kind|default('output') -%}
+            <div class="console--line console--line--{{ kind }}">
+                {%- if kind == 'command' -%}<span class="console--prompt">{{ line.prompt|default(prompt) }}</span> {% endif -%}
+                {{- line.text|default('')|ansi_html -}}
+            </div>
+        {%- endfor -%}
+    </div>
+</div>

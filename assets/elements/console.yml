@@ -1,0 +1,16 @@
+# Declares `console` to the design system registry.
+# formats, per format — whose move it is next:
+#   true            it is there, nothing is owed
+#   todo — a note   it is wanted and missing, someone should build it
+#   a sentence      it does without on purpose, and this is why
+#   left out        nobody has ruled yet, and the check will name it
+description: "What a shell printed, read back: commands after their prompt, their output under them, the terminal colours as the palette's. The vue one also takes lines as they come, from a live updates topic or from its parent."
+formats:
+  style: true
+  template: true
+  script: "it shows, and a server-rendered console has nothing to run"
+  vue: true
+  schema: todo
+  ai: todo
+  react: todo
+  flutter: todo

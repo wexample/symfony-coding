@@ -1,0 +1,29 @@
+{%- extends '@WexampleSymfonyDesignSystemBundle/components/_abstract/vue/vue.vue.twig' -%}
+
+{%- block vue_config -%}
+    {{ parent() }}
+    {{ trans_js(render_pass, 'WexampleSymfonyCodingBundle.common.coding::console.*') }}
+{%- endblock -%}
+
+{%- block vue_body -%}
+    <div
+            class="console"
+            role="log"
+            :aria-live="topic ? 'polite' : null"
+            :aria-label="resolvedLabel"
+            :style="maxHeight ? { '--console-max-height': maxHeight } : null"
+    >
+        <div v-if="title" class="console--bar"><span class="console--title">[[ title ]]</span></div>
+        <div ref="body" class="console--body">
+            <div
+                    v-for="(line, index) in shownLines"
+                    :key="index"
+                    :class="['console--line', 'console--line--' + line.kind]"
+            ><span v-if="line.kind === 'command'" class="console--prompt">[[ line.prompt ]] </span><span
+                    v-for="(segment, segmentIndex) in line.segments"
+                    :key="segmentIndex"
+                    :class="segment.classes"
+            >[[ segment.text ]]</span></div>
+        </div>
+    </div>
+{%- endblock -%}

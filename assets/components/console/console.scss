@@ -1,0 +1,77 @@
+// A shell's output, in the page's own colours: the scheme the page is in, its
+// mono font, and the terminal's eight colours read as the categorical palette.
+.console {
+  --console-max-height: none;
+  --console-black: var(--text-color-subtle);
+  --console-red: var(--color-cat-ruby-23);
+  --console-green: var(--color-cat-grass-23);
+  --console-yellow: var(--color-cat-sunflower-23);
+  --console-blue: var(--color-cat-blue-jeans-23);
+  --console-magenta: var(--color-cat-lavender-23);
+  --console-cyan: var(--color-cat-aqua-23);
+  --console-white: var(--color-default-text);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: var(--border-default);
+  border-radius: var(--radius-box);
+  background: var(--surface-1);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-2);
+  overflow: hidden;
+}
+
+.console--bar {
+  display: flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: var(--border-separator);
+  color: var(--text-color-muted);
+}
+
+.console--body {
+  max-height: var(--console-max-height);
+  overflow: auto;
+  padding: var(--space-3);
+  line-height: 1.5;
+}
+
+// A line keeps its spaces and breaks where it has to rather than pushing the
+// console wider than its room.
+.console--line {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  min-height: 1.5em;
+}
+
+.console--line--command {
+  font-weight: var(--font-weight-strong);
+}
+
+.console--line--error {
+  color: var(--color-error-23);
+}
+
+.console--line--info {
+  color: var(--text-color-muted);
+}
+
+.console--prompt {
+  color: var(--text-color-muted);
+  font-weight: normal;
+  user-select: none;
+}
+
+.console--bold {
+  font-weight: var(--font-weight-strong);
+}
+
+.console--dim {
+  opacity: 0.7;
+}
+
+@each $name in ('black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white') {
+  .console--fg-#{$name} {
+    color: var(--console-#{$name});
+  }
+}
