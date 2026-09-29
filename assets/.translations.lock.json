@@ -1,5 +1,95 @@
 {
+    "common/coding.ar.yml": {
+        "console.label": {
+            "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
+            "engine": "syrtis"
+        }
+    },
+    "common/coding.bn.yml": {
+        "console.label": {
+            "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
+            "engine": "syrtis"
+        }
+    },
+    "common/coding.de.yml": {
+        "console.label": {
+            "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
+            "engine": "syrtis"
+        }
+    },
+    "common/coding.es.yml": {
+        "console.label": {
+            "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
+            "engine": "syrtis"
+        }
+    },
+    "common/coding.fa.yml": {
+        "console.label": {
+            "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
+            "engine": "syrtis"
+        }
+    },
+    "common/coding.fi.yml": {
+        "console.label": {
+            "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
+            "engine": "syrtis"
+        }
+    },
     "common/coding.fr.yml": {
+        "console.label": {
+            "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
+            "engine": "syrtis"
+        }
+    },
+    "common/coding.he.yml": {
+        "console.label": {
+            "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
+            "engine": "syrtis"
+        }
+    },
+    "common/coding.hi.yml": {
+        "console.label": {
+            "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
+            "engine": "syrtis"
+        }
+    },
+    "common/coding.ja.yml": {
+        "console.label": {
+            "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
+            "engine": "syrtis"
+        }
+    },
+    "common/coding.ko.yml": {
+        "console.label": {
+            "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
+            "engine": "syrtis"
+        }
+    },
+    "common/coding.pl.yml": {
+        "console.label": {
+            "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
+            "engine": "syrtis"
+        }
+    },
+    "common/coding.ru.yml": {
+        "console.label": {
+            "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
+            "engine": "syrtis"
+        }
+    },
+    "common/coding.th.yml": {
+        "console.label": {
+            "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
+            "engine": "syrtis"
+        }
+    },
+    "common/coding.ur.yml": {
+        "console.label": {
+            "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
+            "engine": "syrtis"
+        }
+    },
+    "common/coding.zh.yml": {
         "console.label": {
             "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
             "engine": "syrtis"
