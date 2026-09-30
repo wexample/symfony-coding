@@ -53,6 +53,18 @@
             "engine": "syrtis"
         }
     },
+    "common/coding.id.yml": {
+        "console.label": {
+            "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
+            "engine": "syrtis"
+        }
+    },
+    "common/coding.it.yml": {
+        "console.label": {
+            "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
+            "engine": "syrtis"
+        }
+    },
     "common/coding.ja.yml": {
         "console.label": {
             "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
@@ -65,7 +77,19 @@
             "engine": "syrtis"
         }
     },
+    "common/coding.nl.yml": {
+        "console.label": {
+            "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
+            "engine": "syrtis"
+        }
+    },
     "common/coding.pl.yml": {
+        "console.label": {
+            "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
+            "engine": "syrtis"
+        }
+    },
+    "common/coding.pt_BR.yml": {
         "console.label": {
             "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
             "engine": "syrtis"
@@ -83,7 +107,19 @@
             "engine": "syrtis"
         }
     },
+    "common/coding.tr.yml": {
+        "console.label": {
+            "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
+            "engine": "syrtis"
+        }
+    },
     "common/coding.ur.yml": {
+        "console.label": {
+            "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
+            "engine": "syrtis"
+        }
+    },
+    "common/coding.vi.yml": {
         "console.label": {
             "hash": "4601f7dd9b5fbe66d1c1b969e6da529f",
             "engine": "syrtis"
