@@ -1,0 +1,91 @@
+en:
+  console:
+    label: Console
+
+ar:
+  console:
+    label: 'وحدة التحكم'
+
+bn:
+  console:
+    label: কনসোল
+
+de:
+  console:
+    label: Konsole
+
+es:
+  console:
+    label: Consola
+
+fa:
+  console:
+    label: کنسول
+
+fi:
+  console:
+    label: Konsoli
+
+fr:
+  console:
+    label: Console
+
+he:
+  console:
+    label: קונסולה
+
+hi:
+  console:
+    label: Console
+
+id:
+  console:
+    label: Konsol
+
+it:
+  console:
+    label: Console
+
+ja:
+  console:
+    label: コンソール
+
+ko:
+  console:
+    label: 콘솔
+
+nl:
+  console:
+    label: Console
+
+pl:
+  console:
+    label: Konsola
+
+pt_BR:
+  console:
+    label: Console
+
+ru:
+  console:
+    label: Консоль
+
+th:
+  console:
+    label: คอนโซล
+
+tr:
+  console:
+    label: Konsol
+
+ur:
+  console:
+    label: کنسول
+
+vi:
+  console:
+    label: 'Bảng điều khiển'
+
+zh:
+  console:
+    label: Console
