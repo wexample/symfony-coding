@@ -3,13 +3,13 @@
 .console {
   --console-max-height: none;
   --console-black: var(--text-color-subtle);
-  --console-red: var(--color-cat-ruby-23);
-  --console-green: var(--color-cat-grass-23);
-  --console-yellow: var(--color-cat-sunflower-23);
-  --console-blue: var(--color-cat-blue-jeans-23);
-  --console-magenta: var(--color-cat-lavender-23);
-  --console-cyan: var(--color-cat-aqua-23);
-  --console-white: var(--color-default-text);
+  --console-red: var(--cat-ruby-11);
+  --console-green: var(--cat-grass-11);
+  --console-yellow: var(--cat-sunflower-11);
+  --console-blue: var(--cat-blue-jeans-11);
+  --console-magenta: var(--cat-lavender-11);
+  --console-cyan: var(--cat-aqua-11);
+  --console-white: var(--text-color-default);
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -49,7 +49,7 @@
 }
 
 .console--line--error {
-  color: var(--color-error-23);
+  color: var(--error-11);
 }
 
 .console--line--info {
