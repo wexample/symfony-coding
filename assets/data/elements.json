@@ -46,21 +46,22 @@
                 "vue": [
                     "@WexampleSymfonyCodingBundle/components/console/console.vue",
                     "@WexampleSymfonyCodingBundle/components/console/console.vue.twig"
+                ],
+                "script": [
+                    "@WexampleSymfonyCodingBundle/components/console/console.ts"
                 ]
             },
             "stances": {
                 "style": "expected",
                 "template": "expected",
                 "vue": "expected",
-                "script": "waived",
+                "script": "expected",
                 "schema": "todo",
                 "ai": "todo",
                 "react": "todo",
                 "flutter": "todo"
             },
-            "notes": {
-                "script": "it shows, and a server-rendered console has nothing to run"
-            }
+            "notes": []
         }
     ],
     "abstracts": [],

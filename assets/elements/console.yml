@@ -8,7 +8,7 @@ description: "What a shell printed, read back: commands after their prompt, thei
 formats:
   style: true
   template: true
-  script: "it shows, and a server-rendered console has nothing to run"
+  script: true
   vue: true
   schema: todo
   ai: todo

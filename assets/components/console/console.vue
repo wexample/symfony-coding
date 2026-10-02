@@ -1,5 +1,6 @@
 <script>
 import { ansiSegments } from '../../js/Helper/AnsiHelper';
+import { clipboardCopy } from '@wexample/symfony-design-system/js/Helper/ClipboardHelper';
 
 // The twin of console.html.twig, and the one that takes lines as they come:
 // given a `topic`, it listens to it through the live updates service and adds
@@ -13,6 +14,17 @@ export default {
     lines: {
       type: Array,
       default: () => []
+    },
+    // A whole text as a program wrote it — an error message —, each of its
+    // lines output, before the lines given.
+    text: {
+      type: String,
+      default: null
+    },
+    // A button in the bar copying what the console shows.
+    copy: {
+      type: Boolean,
+      default: false
     },
     prompt: {
       type: String,
@@ -40,15 +52,30 @@ export default {
 
   data() {
     return {
+      copied: false,
       received: []
     };
   },
 
   computed: {
     shownLines() {
-      return [...this.lines, ...this.received]
+      const text = this.text === null ? [] : this.text.split('\n');
+
+      return [...text, ...this.lines, ...this.received]
         .slice(-this.maxLines)
         .map((line) => this.normalize(line));
+    },
+
+    copyLabel() {
+      return this.trans('WexampleSymfonyCodingBundle.common.coding::console.copy');
+    },
+
+    copiedLabel() {
+      return this.trans('WexampleSymfonyCodingBundle.common.coding::console.copied');
+    },
+
+    copyIconHtml() {
+      return this.app.getServiceOrFail('icon').icon('ph:bold/copy');
     },
 
     resolvedLabel() {
@@ -77,6 +104,19 @@ export default {
   },
 
   methods: {
+    // What is shown, as it reads: the prompts with their commands, the
+    // terminal's colours left behind.
+    async copyShown() {
+      if (!(await clipboardCopy(this.$refs.body?.innerText ?? ''))) {
+        return;
+      }
+
+      this.copied = true;
+      window.setTimeout(() => {
+        this.copied = false;
+      }, 2000);
+    },
+
     append(payload) {
       const lines = Array.isArray(payload?.lines) ? payload.lines : [payload];
 

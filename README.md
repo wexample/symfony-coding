@@ -1,6 +1,6 @@
 # symfony-coding
 
-Version: 4.0.2
+Version: 4.0.3
 
 The repository does not provide any concrete code that could be documented for now.
 
@@ -28,7 +28,7 @@ Visit the [Wexample Suite documentation](https://docs.wexample.com) for the comp
 ## Dependencies
 
 - php: >=8.5
-- wexample/symfony-design-system: >=25.0.0
+- wexample/symfony-design-system: >=26.0.0
 - wexample/symfony-helpers: >=12.0.0
 
 ## Versioning & Compatibility Policy

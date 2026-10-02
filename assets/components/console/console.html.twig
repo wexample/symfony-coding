@@ -1,15 +1,26 @@
 {#- What a shell printed, read back: commands after their prompt, what they
     wrote under them, colours and weight as the terminal gave them. Each line
     is { kind, text } — `command`, `output`, `error` or `info` — or a string,
-    which is output. Read only: the vue twin also takes lines as they come. -#}
-{%- set lines = lines|default([]) -%}
+    which is output. Read only: the vue twin also takes lines as they come.
+    `text` is a whole text as a program wrote it — an error message —, each of
+    its lines output; `copy` puts a button in the bar copying what it shows. -#}
+{%- set lines = text is defined and text is not null ? text|split("\n") : lines|default([]) -%}
+{%- set copy = copy|default(false) -%}
 {%- set prompt = prompt|default('$') -%}
 <div class="console{{ class is defined and class ? ' ' ~ class }}"
      role="log"
      aria-label="{{ title|default('WexampleSymfonyCodingBundle.common.coding::console.label'|trans) }}"
      {%- if max_height is defined and max_height %} style="--console-max-height: {{ max_height }}"{% endif %}>
-    {%- if title is defined and title -%}
-        <div class="console--bar"><span class="console--title">{{ title }}</span></div>
+    {%- if (title is defined and title) or copy -%}
+        <div class="console--bar">
+            {%- if title is defined and title -%}<span class="console--title">{{ title }}</span>{%- endif -%}
+            {%- if copy -%}
+                {%- set copy_label = 'WexampleSymfonyCodingBundle.common.coding::console.copy'|trans -%}
+                <button type="button" class="action-icon console--copy"
+                        aria-label="{{ copy_label }}" data-tooltip="{{ copy_label }}"
+                        data-copied-label="{{ 'WexampleSymfonyCodingBundle.common.coding::console.copied'|trans }}">{{ icon('ph:bold/copy') }}</button>
+            {%- endif -%}
+        </div>
     {%- endif -%}
     <div class="console--body">
         {%- for line in lines -%}

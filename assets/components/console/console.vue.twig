@@ -13,7 +13,19 @@
             :aria-label="resolvedLabel"
             :style="maxHeight ? { '--console-max-height': maxHeight } : null"
     >
-        <div v-if="title" class="console--bar"><span class="console--title">[[ title ]]</span></div>
+        <div v-if="title || copy" class="console--bar">
+            <span v-if="title" class="console--title">[[ title ]]</span>
+            <button
+                    v-if="copy"
+                    type="button"
+                    class="action-icon console--copy"
+                    :class="{ 'is-copied': copied }"
+                    :aria-label="copyLabel"
+                    :data-tooltip="copied ? copiedLabel : copyLabel"
+                    @click="copyShown"
+                    v-html="copyIconHtml"
+            ></button>
+        </div>
         <div ref="body" class="console--body">
             <div
                     v-for="(line, index) in shownLines"

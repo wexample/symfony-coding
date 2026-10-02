@@ -1,6 +1,8 @@
 en:
   console:
     label: Console
+    copy: Copy
+    copied: Copied
 
 ar:
   console:
