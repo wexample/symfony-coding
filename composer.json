@@ -3,7 +3,7 @@
   "description": "Code as a tool for Symfony: fields to write it in",
   "type": "library",
   "license": "MIT",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "autoload": {
     "psr-4": {
       "Wexample\\SymfonyCoding\\": "src/"
@@ -18,7 +18,7 @@
   "require": {
     "php": ">=8.5",
     "wexample/symfony-design-system": ">=29.0.0",
-    "wexample/symfony-helpers": ">=13.0.0"
+    "wexample/symfony-helpers": ">=14.0.0"
   },
   "scripts": {
     "post-install-cmd": [
