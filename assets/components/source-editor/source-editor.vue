@@ -28,6 +28,13 @@ export default {
       type: String,
       default: null
     },
+    // What is said of the text, marked on it as the view marks it
+    // (source-view): { line, column, end_line, end_column, severity, message,
+    // code }, 1-based, the end exclusive.
+    annotations: {
+      type: Array,
+      default: () => []
+    },
     saveUrl: {
       type: String,
       required: true
