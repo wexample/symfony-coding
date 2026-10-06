@@ -35,6 +35,11 @@ export default {
       type: Array,
       default: () => []
     },
+    // What leads to a range of the text from elsewhere on the page (source-view).
+    revealName: {
+      type: String,
+      default: null
+    },
     saveUrl: {
       type: String,
       required: true

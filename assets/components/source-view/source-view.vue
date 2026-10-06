@@ -15,6 +15,11 @@ import {
 // (`annotation-hover`, its index or null) and which is clicked
 // (`annotation-click`); `reveal(index)` brings one to the reader. Editable on
 // demand (`editable`), saying each change (`change`, the whole text).
+// Given a name (`revealName`), any element of the page carrying
+// `data-source-reveal` with that name brings, once pressed, the range it
+// names to the reader — `data-source-line`, and `-column`, `-end-line`,
+// `-end-column` when it has them: a list drawn elsewhere — a findings column
+// — leading to the text.
 export default {
   template: '#vue-template-wexample-symfony-coding-bundle-components-source-view-source-view',
 
@@ -49,6 +54,10 @@ export default {
     flush: {
       type: Boolean,
       default: false
+    },
+    revealName: {
+      type: String,
+      default: null
     }
   },
 
@@ -85,9 +94,14 @@ export default {
     });
 
     sourceAnnotationsSet(this.editor.view, this.annotations);
+
+    if (this.revealName) {
+      document.addEventListener('click', this.onRevealClick);
+    }
   },
 
   beforeUnmount() {
+    document.removeEventListener('click', this.onRevealClick);
     this.editor?.destroy();
     this.editor = null;
   },
@@ -123,6 +137,26 @@ export default {
       const pos = view.posAtCoords({ x: event.clientX, y: event.clientY });
 
       return pos === null ? -1 : sourceAnnotationAt(view, pos, this.annotations);
+    },
+
+    onRevealClick(event) {
+      const trigger = event.target instanceof Element ? event.target.closest('[data-source-reveal]') : null;
+
+      if (!trigger || trigger.dataset.sourceReveal !== this.revealName || !this.editor) {
+        return;
+      }
+
+      const number = (value) => (value ? Number(value) : undefined);
+
+      event.preventDefault();
+      sourceAnnotationReveal(this.editor.view, {
+        line: Number(trigger.dataset.sourceLine),
+        column: number(trigger.dataset.sourceColumn),
+        end_line: number(trigger.dataset.sourceEndLine),
+        end_column: number(trigger.dataset.sourceEndColumn),
+        message: ''
+      });
+      this.editor.view.focus();
     },
 
     reveal(index) {
