@@ -11,6 +11,12 @@
   overflow: hidden;
 }
 
+// Against the edges of what holds it: the zone is the frame.
+.source-view--flush {
+  border: none;
+  border-radius: 0;
+}
+
 .source-view--editor {
   flex: 1;
   min-height: 0;

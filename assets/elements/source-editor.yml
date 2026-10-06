@@ -1,0 +1,17 @@
+# Declares `source-editor` to the design system registry.
+# Kept by hand.
+# formats, per format — whose move it is next:
+#   true            it is there, nothing is owed
+#   todo — a note   it is wanted and missing, someone should build it
+#   a sentence      it does without on purpose, and this is why
+#   left out        nobody has ruled yet, and the check will name it
+description: "A text edited where it is read and written back on its own — a while after the last keystroke, or at once on Ctrl+S — the line at its foot saying whether what is on screen is what is on disk."
+formats:
+  style: true
+  vue: true
+  template: "drawn where a page edits a file, in vue"
+  script: "a vue component, its behaviour in the component"
+  schema: todo
+  ai: todo
+  react: todo
+  flutter: todo

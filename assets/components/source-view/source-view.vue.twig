@@ -2,8 +2,8 @@
 
 {%- block vue_body -%}
     {#- A text read as its source, what was said of it marked on it: the editor
-        of code-input, read only. -#}
-    <div class="source-view">
+        of code-input, read only unless it is told otherwise. -#}
+    <div class="source-view" :class="{ 'source-view--flush': flush }">
         <div ref="editor" class="source-view--editor"></div>
     </div>
 {%- endblock -%}

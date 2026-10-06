@@ -3,6 +3,11 @@ en:
     label: Console
     copy: Copy
     copied: Copied
+  editor:
+    dirty: Modified
+    saving: Saving…
+    saved: Saved
+    failed: Not saved
 
 ar:
   console:

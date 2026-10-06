@@ -13,11 +13,12 @@ import {
 // the rule under the pointer. The editor of code-input, read only — the same
 // one will be the place to correct it. Says which annotation is pointed at
 // (`annotation-hover`, its index or null) and which is clicked
-// (`annotation-click`); `reveal(index)` brings one to the reader.
+// (`annotation-click`); `reveal(index)` brings one to the reader. Editable on
+// demand (`editable`), saying each change (`change`, the whole text).
 export default {
   template: '#vue-template-wexample-symfony-coding-bundle-components-source-view-source-view',
 
-  emits: ['annotation-click', 'annotation-hover'],
+  emits: ['annotation-click', 'annotation-hover', 'change'],
 
   props: {
     text: {
@@ -38,6 +39,16 @@ export default {
     wrap: {
       type: Boolean,
       default: true
+    },
+    editable: {
+      type: Boolean,
+      default: false
+    },
+    // Against the edges of what holds it, with no frame of its own: the text
+    // of an editor filling its zone.
+    flush: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -47,8 +58,9 @@ export default {
     this.editor = await createCodeEditor(this.$refs.editor, {
       value: this.text,
       language: this.language,
-      readOnly: true,
+      readOnly: !this.editable,
       wrap: this.wrap,
+      onChange: (value) => this.$emit('change', value),
       extensions: [
         sourceAnnotationsExtension(),
         EditorView.domEventHandlers({
@@ -99,6 +111,14 @@ export default {
   },
 
   methods: {
+    getValue() {
+      return this.editor ? this.editor.getValue() : this.text;
+    },
+
+    hasFocus() {
+      return Boolean(this.editor?.view.hasFocus);
+    },
+
     annotationAtEvent(event, view) {
       const pos = view.posAtCoords({ x: event.clientX, y: event.clientY });
 
