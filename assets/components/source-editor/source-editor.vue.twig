@@ -10,9 +10,8 @@
 {%- endblock -%}
 
 {%- block vue_body -%}
-    {#- A text written and kept: the editor, and under it the line an editor
-        has at its foot — what the text is, and whether what is on screen is
-        what is on disk. -#}
+    {#- A text written and kept: the editor, and whether what is on screen is
+        what is on disk — at its foot, or where the page says. -#}
     <div class="source-editor">
         <source-view
                 ref="source"
@@ -23,7 +22,18 @@
                 :flush="flush"
                 @change="changed"
         ></source-view>
-        <div class="source-editor--status">
+        {#- Said where the page wants it (`statusTarget`) — the layout's
+            footer —, or else at the editor's own foot. -#}
+        <teleport v-if="statusTarget" :to="statusTarget">
+            <span
+                    v-if="state !== 'idle'"
+                    class="source-editor--state"
+                    :class="'source-editor--state--' + state"
+                    role="status"
+                    aria-live="polite"
+            >[[ stateLabel ]]</span>
+        </teleport>
+        <div v-else class="source-editor--status">
             <span class="source-editor--language">[[ language ]]</span>
             <span
                     class="source-editor--state"

@@ -44,6 +44,12 @@ export default {
     flush: {
       type: Boolean,
       default: false
+    },
+    // A selector the state is said in rather than at the editor's foot: the
+    // layout's footer (`#footer-status`).
+    statusTarget: {
+      type: String,
+      default: null
     }
   },
 
