@@ -124,13 +124,26 @@ export function sourceAnnotationAt(view: EditorView, pos: number, annotations: S
   });
 }
 
-// Brings an annotation to the reader: scrolled to the middle of the view, its
-// span selected.
+// Brings an annotation to the reader: its span selected, scrolled to the
+// middle of the view — smoothly where the editor scrolls itself, the reader
+// seeing where it goes; at once where it does not, CodeMirror then moving
+// what holds it.
 export function sourceAnnotationReveal(view: EditorView, annotation: SourceAnnotation): void {
   const { from, to } = sourceAnnotationRange(view.state.doc, annotation);
+  const scroller = view.scrollDOM;
+  const scrolls = scroller.scrollHeight > scroller.clientHeight;
 
   view.dispatch({
     selection: { anchor: from, head: to },
-    effects: EditorView.scrollIntoView(from, { y: 'center' }),
+    effects: scrolls ? [] : EditorView.scrollIntoView(from, { y: 'center' }),
   });
+
+  if (scrolls) {
+    const block = view.lineBlockAt(from);
+
+    scroller.scrollTo({
+      top: view.documentPadding.top + block.top + block.height / 2 - scroller.clientHeight / 2,
+      behavior: 'smooth',
+    });
+  }
 }
