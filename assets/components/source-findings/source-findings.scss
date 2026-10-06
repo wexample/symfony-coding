@@ -14,6 +14,12 @@
   align-items: start;
 }
 
+// Nothing found, nothing beside: the text takes the whole room rather than
+// leaving a band of nothing between it and whatever stands after it.
+.source-findings--layout:not(:has(> .source-findings--list)) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 @container (max-width: 44rem) {
   .source-findings--layout {
     grid-template-columns: minmax(0, 1fr);

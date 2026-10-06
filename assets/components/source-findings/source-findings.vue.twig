@@ -19,7 +19,7 @@
                     @annotation-click="select"
                     @annotation-hover="active = $event"
             ></source-view>
-            <ol class="source-findings--list">
+            <ol v-if="annotations && annotations.length" class="source-findings--list">
                 <li
                         v-for="(annotation, index) in annotations"
                         :key="index"
