@@ -1,0 +1,21 @@
+// A text read as its source, in the frame code is read in: the editor fills it
+// and scrolls inside it.
+.source-view {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+  border: var(--border-default);
+  border-radius: var(--radius-box);
+  background: var(--surface-1);
+  overflow: hidden;
+}
+
+.source-view--editor {
+  flex: 1;
+  min-height: 0;
+
+  .cm-editor {
+    height: 100%;
+  }
+}

@@ -62,6 +62,62 @@
                 "flutter": "todo"
             },
             "notes": []
+        },
+        {
+            "key": "source-findings",
+            "source": "WexampleSymfonyCodingBundle",
+            "description": "The source and its findings side by side, each leading to the other; one above the other where the room is narrow.",
+            "formats": {
+                "style": [
+                    "@WexampleSymfonyCodingBundle/components/source-findings/source-findings.scss"
+                ],
+                "vue": [
+                    "@WexampleSymfonyCodingBundle/components/source-findings/source-findings.vue.twig",
+                    "@WexampleSymfonyCodingBundle/components/source-findings/source-findings.vue"
+                ]
+            },
+            "stances": {
+                "style": "expected",
+                "template": "waived",
+                "vue": "expected",
+                "script": "waived",
+                "schema": "todo",
+                "ai": "todo",
+                "react": "todo",
+                "flutter": "todo"
+            },
+            "notes": {
+                "template": "drawn where a page reads files, all of them in vue",
+                "script": "a vue component, its behaviour in the component"
+            }
+        },
+        {
+            "key": "source-view",
+            "source": "WexampleSymfonyCodingBundle",
+            "description": "A text read as its source, what a rule found in it marked on it: tinted spans, marks in the gutter, the message under the pointer. Read only for now.",
+            "formats": {
+                "style": [
+                    "@WexampleSymfonyCodingBundle/components/source-view/source-view.scss"
+                ],
+                "vue": [
+                    "@WexampleSymfonyCodingBundle/components/source-view/source-view.vue",
+                    "@WexampleSymfonyCodingBundle/components/source-view/source-view.vue.twig"
+                ]
+            },
+            "stances": {
+                "style": "expected",
+                "template": "waived",
+                "vue": "expected",
+                "script": "waived",
+                "schema": "todo",
+                "ai": "todo",
+                "react": "todo",
+                "flutter": "todo"
+            },
+            "notes": {
+                "template": "drawn where a page reads files, all of them in vue",
+                "script": "a vue component, its behaviour in the component"
+            }
         }
     ],
     "abstracts": [],

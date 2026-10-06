@@ -1,0 +1,72 @@
+// The source and its findings side by side, each leading to the other; one
+// above the other where the room is a panel's or a phone's.
+@use '../source-view/source-view';
+
+.source-findings {
+  container-type: inline-size;
+  min-width: 0;
+}
+
+.source-findings--layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 22rem);
+  gap: var(--space-3);
+  align-items: start;
+}
+
+@container (max-width: 44rem) {
+  .source-findings--layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.source-findings--source {
+  max-height: 70vh;
+}
+
+.source-findings--list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-height: 70vh;
+  overflow: auto;
+}
+
+.source-findings--item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-1) var(--space-2);
+  align-items: baseline;
+  padding: var(--space-2);
+  border-radius: var(--radius-box);
+  cursor: pointer;
+
+  &:hover,
+  &.is-active {
+    background: var(--tint-2);
+  }
+
+  &.is-selected {
+    background: var(--tint-3);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-link);
+    outline-offset: -2px;
+  }
+}
+
+.source-findings--message {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.source-findings--code {
+  grid-column: 2;
+  font-size: var(--font-size-1);
+  color: var(--text-color-muted);
+  overflow-wrap: anywhere;
+}

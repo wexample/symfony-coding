@@ -1,0 +1,17 @@
+# Declares `source-findings` to the design system registry.
+# Seeded from a scan of the assets; kept by hand from here on.
+# formats, per format — whose move it is next:
+#   true            it is there, nothing is owed
+#   todo — a note   it is wanted and missing, someone should build it
+#   a sentence      it does without on purpose, and this is why
+#   left out        nobody has ruled yet, and the check will name it
+description: "The source and its findings side by side, each leading to the other; one above the other where the room is narrow."
+formats:
+  style: true
+  vue: true
+  template: "drawn where a page reads files, all of them in vue"
+  script: "a vue component, its behaviour in the component"
+  schema: todo
+  ai: todo
+  react: todo
+  flutter: todo

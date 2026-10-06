@@ -1,0 +1,46 @@
+{%- extends '@WexampleSymfonyDesignSystemBundle/components/_abstract/vue/vue.vue.twig' -%}
+
+{%- block vue_require -%}
+    {{- vue_require(render_pass, '@WexampleSymfonyCodingBundle/components/source-view') -}}
+    {{- vue_require(render_pass, '@WexampleSymfonyDesignSystemBundle/components/marker') -}}
+{%- endblock -%}
+
+{%- block vue_body -%}
+    {#- The source on one side, what was found in it on the other, each leading to
+        the other. One column under the other when the room is narrow. -#}
+    <div class="source-findings">
+        <div class="source-findings--layout">
+            <source-view
+                    ref="source"
+                    class="source-findings--source"
+                    :text="text"
+                    :language="language"
+                    :annotations="annotations"
+                    @annotation-click="select"
+                    @annotation-hover="active = $event"
+            ></source-view>
+            <ol class="source-findings--list">
+                <li
+                        v-for="(annotation, index) in annotations"
+                        :key="index"
+                        ref="items"
+                        class="source-findings--item"
+                        :class="{ 'is-active': active === index, 'is-selected': selected === index }"
+                        tabindex="0"
+                        @click="select(index)"
+                        @keydown.enter="select(index)"
+                        @mouseenter="active = index"
+                        @mouseleave="active = null"
+                >
+                    <capsule
+                            :tone="tone(annotation.severity)"
+                            :label="lineLabel(annotation)"
+                            :compact="true"
+                    ></capsule>
+                    <span class="source-findings--message">[[ annotation.message ]]</span>
+                    <code v-if="annotation.code" class="source-findings--code">[[ annotation.code ]]</code>
+                </li>
+            </ol>
+        </div>
+    </div>
+{%- endblock -%}
