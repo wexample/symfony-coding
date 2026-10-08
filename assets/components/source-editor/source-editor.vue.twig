@@ -35,10 +35,10 @@
                     aria-live="polite"
             >[[ stateLabel ]]</span>
         </teleport>
-        <div v-else class="source-editor--status">
+        <div v-else class="status-bar source-editor--status">
             <span class="source-editor--language">[[ language ]]</span>
             <span
-                    class="source-editor--state"
+                    class="status-bar--end source-editor--state"
                     :class="'source-editor--state--' + state"
                     role="status"
                     aria-live="polite"

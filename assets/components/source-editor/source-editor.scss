@@ -1,6 +1,7 @@
 // A text edited where it is read, and the line at its foot saying where it
 // stands: the editor takes the room, the line keeps its height.
 @use '@wexample/symfony-design-system/css/mixins/feedback';
+@use '@wexample/symfony-design-system/css/shapes/status-bar';
 @use '../source-view/source-view';
 
 .source-editor {
@@ -14,18 +15,6 @@
 .source-editor--source {
   flex: 1;
   min-height: 0;
-}
-
-.source-editor--status {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-3);
-  min-height: calc(var(--font-size-1) * 1.5 + 2 * var(--space-1));
-  padding: var(--space-1) var(--space-3);
-  border-top: var(--border-separator);
-  font-size: var(--font-size-1);
-  color: var(--text-color-muted);
 }
 
 .source-editor--language {
