@@ -64,6 +64,34 @@
             "notes": []
         },
         {
+            "key": "source-editor",
+            "source": "WexampleSymfonyCodingBundle",
+            "description": "A text edited where it is read and written back on its own \u2014 a while after the last keystroke, or at once on Ctrl+S \u2014 the line at its foot saying whether what is on screen is what is on disk.",
+            "formats": {
+                "style": [
+                    "@WexampleSymfonyCodingBundle/components/source-editor/source-editor.scss"
+                ],
+                "vue": [
+                    "@WexampleSymfonyCodingBundle/components/source-editor/source-editor.vue",
+                    "@WexampleSymfonyCodingBundle/components/source-editor/source-editor.vue.twig"
+                ]
+            },
+            "stances": {
+                "style": "expected",
+                "template": "waived",
+                "vue": "expected",
+                "script": "waived",
+                "schema": "todo",
+                "ai": "todo",
+                "react": "todo",
+                "flutter": "todo"
+            },
+            "notes": {
+                "template": "drawn where a page edits a file, in vue",
+                "script": "a vue component, its behaviour in the component"
+            }
+        },
+        {
             "key": "source-findings",
             "source": "WexampleSymfonyCodingBundle",
             "description": "The source and its findings side by side, each leading to the other; one above the other where the room is narrow.",
