@@ -9,6 +9,11 @@
       "Wexample\\SymfonyCoding\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Wexample\\SymfonyCoding\\Tests\\": "tests/"
+    }
+  },
   "authors": [
     {
       "name": "weeger",
@@ -18,7 +23,12 @@
   "require": {
     "php": ">=8.5",
     "wexample/symfony-design-system": ">=32.0.0",
-    "wexample/symfony-helpers": ">=15.0.0"
+    "wexample/symfony-helpers": ">=15.0.0",
+    "wexample/symfony-forms": ">=11.0.0",
+    "symfony/html-sanitizer": "^7.4 || ^8.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^13"
   },
   "scripts": {
     "post-install-cmd": [
