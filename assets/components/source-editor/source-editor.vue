@@ -1,7 +1,7 @@
 <script>
 import SourceView from '../source-view/source-view.vue';
 
-const KEY_SAVE = ['s', 'S'];
+const SHORTCUT_SAVE = 'Mod+S';
 const DOMAIN = 'WexampleSymfonyCodingBundle.common.coding::editor.';
 
 // A text edited where it is read, and written back on its own: a while after
@@ -89,11 +89,11 @@ export default {
   mounted() {
     const keyboard = this.app.services.keyboard;
 
-    KEY_SAVE.forEach((key) => keyboard.registerKeyDown(this, key, () => this.save(), {
+    keyboard.registerShortcut(this, SHORTCUT_SAVE, () => this.save(), {
       preventDefault: true,
       priority: 10,
-      enabled: (event) => (event.ctrlKey || event.metaKey) && !event.altKey && this.$el.isConnected
-    }));
+      enabled: () => this.$el.isConnected
+    });
   },
 
   beforeUnmount() {
