@@ -1,29 +1,15 @@
-// The source and its findings side by side, each leading to the other; one
-// above the other where the room is a panel's or a phone's.
+// The source and its findings, each leading to the other.
 @use '../source-view/source-view';
+@use '@wexample/symfony-design-system/css/shapes/grid';
 
+// Side by side as the design system lays a subject and what goes with it
+// (grid--aside): the findings under the text once the room is too narrow.
 .source-findings {
-  container-type: inline-size;
   min-width: 0;
 }
 
 .source-findings--layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(14rem, 22rem);
-  gap: var(--space-3);
-  align-items: start;
-}
-
-// Nothing found, nothing beside: the text takes the whole room rather than
-// leaving a band of nothing between it and whatever stands after it.
-.source-findings--layout:not(:has(> .source-findings--list)) {
-  grid-template-columns: minmax(0, 1fr);
-}
-
-@container (max-width: 44rem) {
-  .source-findings--layout {
-    grid-template-columns: minmax(0, 1fr);
-  }
+  --grid-aside: 18rem;
 }
 
 .source-findings--source {
