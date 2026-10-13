@@ -1,11 +1,30 @@
 # symfony-coding
 
-Version: 4.0.9
+Version: 4.1.0
 
-The repository does not provide any concrete code that could be documented for now.
+`wexample/symfony-coding` gives Symfony applications fields to write code in, and the views to read it: a CodeMirror editor, an annotated source view, Twig filters for ANSI output and git graphs.
+
+## HTML written by hand
+
+`HtmlInputType` is a textarea for HTML, cleaned before it is kept: Symfony's HtmlSanitizer removes what could run — scripts, `on…` attributes, `javascript:` links — and keeps the safe elements, so what is stored can be shown again as is.
+
+```php
+$builder->add('body', HtmlInputType::class);
+```
+
+The default keeps every safe element. An application that wants fewer, or more, registers the type with its own sanitizer:
+
+```yaml
+services:
+    Wexample\SymfonyCoding\Form\Type\HtmlInputType:
+        arguments: ['@html_sanitizer.sanitizer.article']
+```
+
+It is a textarea, not a visual editor: the HTML is written as code.
 
 ## Table of Contents
 
+- [HTML written by hand](#html-written-by-hand)
 - [Integration in the Suite](#integration-in-the-suite)
 - [Dependencies](#dependencies)
 - [Versioning & Compatibility Policy](#versioning--compatibility-policy)
@@ -28,8 +47,10 @@ Visit the [Wexample Suite documentation](https://docs.wexample.com) for the comp
 ## Dependencies
 
 - php: >=8.5
-- wexample/symfony-design-system: >=32.0.0
-- wexample/symfony-helpers: >=15.0.0
+- wexample/symfony-design-system: >=34.0.0
+- wexample/symfony-helpers: >=16.0.0
+- wexample/symfony-forms: >=12.0.0
+- symfony/html-sanitizer: ^7.4 || ^8.0
 
 ## Versioning & Compatibility Policy
 

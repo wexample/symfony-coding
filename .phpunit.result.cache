@@ -1,0 +1,1 @@
+{"version":2,"defects":[],"times":{"Wexample\\SymfonyCoding\\Tests\\Unit\\HtmlInputTypeTest::testWhatCouldRunIsRemovedAndTheRestKept":0.061,"Wexample\\SymfonyCoding\\Tests\\Unit\\HtmlInputTypeTest::testAnApplicationSanitizerDecidesWhatStays":0.001,"Wexample\\SymfonyCoding\\Tests\\Unit\\HtmlInputTypeTest::testNothingStaysNothing":0.003}}
