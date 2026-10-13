@@ -1,6 +1,6 @@
 # symfony-coding
 
-Version: 4.1.0
+Version: 4.1.1
 
 `wexample/symfony-coding` gives Symfony applications fields to write code in, and the views to read it: a CodeMirror editor, an annotated source view, Twig filters for ANSI output and git graphs.
 
@@ -47,7 +47,7 @@ Visit the [Wexample Suite documentation](https://docs.wexample.com) for the comp
 ## Dependencies
 
 - php: >=8.5
-- wexample/symfony-design-system: >=34.0.0
+- wexample/symfony-design-system: >=35.0.0
 - wexample/symfony-helpers: >=16.0.0
 - wexample/symfony-forms: >=12.0.0
 - symfony/html-sanitizer: ^7.4 || ^8.0
