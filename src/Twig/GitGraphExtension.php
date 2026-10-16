@@ -5,7 +5,7 @@ namespace Wexample\SymfonyCoding\Twig;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
-use Wexample\SymfonyHelpers\Service\GitRepositoryReader;
+use Wexample\PhpGit\Class\GitRepositoryReader;
 
 /**
  * A repository's history as the design system's graph log reads it:
