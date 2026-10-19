@@ -12,6 +12,13 @@ en:
 ar:
   console:
     label: 'وحدة التحكم'
+    copy: نسخ
+    copied: 'تم النسخ'
+  editor:
+    dirty: 'تم التعديل'
+    saving: 'جارٍ الحفظ…'
+    saved: 'تم الحفظ'
+    failed: 'لم يتم الحفظ'
 
 bn:
   console:
@@ -36,6 +43,13 @@ fi:
 fr:
   console:
     label: Console
+    copy: Copier
+    copied: Copié
+  editor:
+    dirty: Modifié
+    saving: Enregistrement…
+    saved: Enregistré
+    failed: 'Non enregistré'
 
 he:
   console:
@@ -96,3 +110,10 @@ vi:
 zh:
   console:
     label: Console
+    copy: 复制
+    copied: 已复制
+  editor:
+    dirty: 已修改
+    saving: 正在保存…
+    saved: 已保存
+    failed: 未保存
