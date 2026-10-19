@@ -23,22 +23,57 @@ ar:
 bn:
   console:
     label: কনসোল
+    copy: 'কপি করুন'
+    copied: 'কপি হয়েছে'
+  editor:
+    dirty: সংশোধিত
+    saving: 'সংরক্ষণ হচ্ছে…'
+    saved: সংরক্ষিত
+    failed: 'সংরক্ষণ হয়নি'
 
 de:
   console:
     label: Konsole
+    copy: Kopieren
+    copied: Kopiert
+  editor:
+    dirty: Geändert
+    saving: 'Wird gespeichert…'
+    saved: Gespeichert
+    failed: 'Nicht gespeichert'
 
 es:
   console:
     label: Consola
+    copy: Copiar
+    copied: Copiado
+  editor:
+    dirty: Modificado
+    saving: Guardando…
+    saved: Guardado
+    failed: 'No guardado'
 
 fa:
   console:
     label: کنسول
+    copy: کپی
+    copied: 'کپی شد'
+  editor:
+    dirty: 'تغییر یافته'
+    saving: 'در حال ذخیره…'
+    saved: 'ذخیره شد'
+    failed: 'ذخیره نشد'
 
 fi:
   console:
     label: Konsoli
+    copy: Kopioi
+    copied: Kopioitu
+  editor:
+    dirty: Muokattu
+    saving: Tallennetaan…
+    saved: Tallennettu
+    failed: 'Ei tallennettu'
 
 fr:
   console:
@@ -54,58 +89,156 @@ fr:
 he:
   console:
     label: קונסולה
+    copy: העתק
+    copied: הועתק
+  editor:
+    dirty: שונה
+    saving: שומר…
+    saved: שמור
+    failed: 'לא נשמר'
 
 hi:
   console:
     label: Console
+    copy: 'कॉपी करें'
+    copied: 'कॉपी किया गया'
+  editor:
+    dirty: संशोधित
+    saving: 'सहेज रहा है…'
+    saved: 'सहेजा गया'
+    failed: 'सहेजा नहीं गया'
 
 id:
   console:
     label: Konsol
+    copy: Salin
+    copied: Disalin
+  editor:
+    dirty: Dimodifikasi
+    saving: Menyimpan…
+    saved: Tersimpan
+    failed: 'Tidak tersimpan'
 
 it:
   console:
     label: Console
+    copy: Copia
+    copied: Copiato
+  editor:
+    dirty: Modificato
+    saving: 'Salvataggio in corso…'
+    saved: Salvato
+    failed: 'Non salvato'
 
 ja:
   console:
     label: コンソール
+    copy: コピー
+    copied: コピーしました
+  editor:
+    dirty: 変更あり
+    saving: 保存中…
+    saved: 保存完了
+    failed: 保存に失敗しました
 
 ko:
   console:
     label: 콘솔
+    copy: 복사
+    copied: 복사됨
+  editor:
+    dirty: 수정됨
+    saving: '저장 중…'
+    saved: 저장됨
+    failed: '저장하지 않음'
 
 nl:
   console:
     label: Console
+    copy: Kopiëren
+    copied: Gekopieerd
+  editor:
+    dirty: Gewijzigd
+    saving: Opslaan…
+    saved: Opgeslagen
+    failed: 'Niet opgeslagen'
 
 pl:
   console:
     label: Konsola
+    copy: Kopiuj
+    copied: Skopiowano
+  editor:
+    dirty: Zmodyfikowany
+    saving: Zapisywanie…
+    saved: Zapisano
+    failed: 'Nie zapisano'
 
 pt_BR:
   console:
     label: Console
+    copy: Copiar
+    copied: Copiado
+  editor:
+    dirty: Modificado
+    saving: Salvando…
+    saved: Salvo
+    failed: 'Não salvo'
 
 ru:
   console:
     label: Консоль
+    copy: Скопировать
+    copied: Скопировано
+  editor:
+    dirty: Изменено
+    saving: Сохраняется…
+    saved: Сохранено
+    failed: 'Не сохранено'
 
 th:
   console:
     label: คอนโซล
+    copy: คัดลอก
+    copied: คัดลอกแล้ว
+  editor:
+    dirty: แก้ไขแล้ว
+    saving: กำลังบันทึก…
+    saved: บันทึกแล้ว
+    failed: ไม่สามารถบันทึกได้
 
 tr:
   console:
     label: Konsol
+    copy: Kopyala
+    copied: Kopyalandı
+  editor:
+    dirty: Değiştirildi
+    saving: Kaydediliyor…
+    saved: Kaydedildi
+    failed: Kaydedilemedi
 
 ur:
   console:
     label: کنسول
+    copy: 'نقل کریں'
+    copied: 'نقل کر دیا گیا'
+  editor:
+    dirty: 'تبدیل شدہ'
+    saving: 'محفوظ کیا جا رہا ہے…'
+    saved: 'محفوظ ہو گیا'
+    failed: 'محفوظ نہیں کیا گیا'
 
 vi:
   console:
     label: 'Bảng điều khiển'
+    copy: 'Sao chép'
+    copied: 'Đã sao chép'
+  editor:
+    dirty: 'Đã sửa đổi'
+    saving: 'Đang lưu…'
+    saved: 'Đã lưu'
+    failed: 'Không lưu'
 
 zh:
   console:
