@@ -1,6 +1,6 @@
 # symfony-coding
 
-Version: 5.0.3
+Version: 5.0.4
 
 Code as a tool for Symfony: fields to write it in
 
