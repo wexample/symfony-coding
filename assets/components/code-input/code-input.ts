@@ -8,6 +8,11 @@ import { type CodeEditor, createCodeEditor } from '../../js/Helper/CodeEditorHel
 export default class extends Field {
   private editor?: CodeEditor;
   private sourceEl: HTMLTextAreaElement | null = null;
+  // The field naming the language, when another field of the form chooses it:
+  // its group, which hears it change whatever draws it — a native control's
+  // `change`, a select component's `select:change` —, and the control it posts.
+  private languageGroupEl: HTMLElement | null = null;
+  private languageValueEl: HTMLInputElement | HTMLSelectElement | null = null;
 
   protected async activateListeners(): Promise<void> {
     await super.activateListeners();
@@ -20,9 +25,13 @@ export default class extends Field {
     }
 
     this.sourceEl = source;
+    this.languageGroupEl = this.options?.language_source
+      ? document.getElementById(this.options.language_source)?.closest<HTMLElement>('.form--group') ?? null
+      : null;
+    this.languageValueEl = this.languageGroupEl?.querySelector<HTMLInputElement | HTMLSelectElement>('[name]') ?? null;
     this.editor = await createCodeEditor(host, {
       value: source.value,
-      language: this.options?.language ?? null,
+      language: this.readLanguage(),
       readOnly: Boolean(this.options?.read_only) || source.disabled,
       placeholder: source.placeholder || null,
       label: this.el.querySelector('.form--label')?.textContent?.trim() || null,
@@ -37,10 +46,14 @@ export default class extends Field {
     host.hidden = false;
     source.classList.add('code-input--source-aside');
     source.addEventListener('input', this.onSourceInput);
+    this.languageGroupEl?.addEventListener('change', this.onLanguageChange);
+    this.languageGroupEl?.addEventListener('select:change', this.onLanguageChange);
   }
 
   protected async deactivateListeners(): Promise<void> {
     this.sourceEl?.removeEventListener('input', this.onSourceInput);
+    this.languageGroupEl?.removeEventListener('change', this.onLanguageChange);
+    this.languageGroupEl?.removeEventListener('select:change', this.onLanguageChange);
     this.sourceEl?.classList.remove('code-input--source-aside');
     this.editor?.destroy();
     this.editor = undefined;
@@ -52,5 +65,21 @@ export default class extends Field {
   // assisted value: the editor shows what the field now holds.
   private onSourceInput = (): void => {
     this.editor?.setValue(this.sourceEl?.value ?? '');
+  };
+
+  // The language the field names, through the map where the two do not share
+  // a name; the one given to the field otherwise.
+  private readLanguage(): string | null {
+    const value = this.languageValueEl?.value;
+
+    if (!value) {
+      return this.options?.language ?? null;
+    }
+
+    return this.options?.language_map?.[value] ?? value;
+  }
+
+  private onLanguageChange = (): void => {
+    this.editor?.setLanguage(this.readLanguage());
   };
 }
