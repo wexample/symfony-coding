@@ -152,6 +152,7 @@
     "shapes": [],
     "unscanned_paths": [
         "@WexampleSymfonyCodingBundle/common",
+        "@WexampleSymfonyCodingBundle/form",
         "@WexampleSymfonyCodingBundle/js"
     ]
 }
