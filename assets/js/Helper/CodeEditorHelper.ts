@@ -30,6 +30,13 @@ const LANGUAGES: Record<string, () => Promise<Extension>> = {
   ts: async () => (await import('@codemirror/lang-javascript')).javascript({ typescript: true }),
   jinja: async () => (await import('@codemirror/lang-jinja')).jinja(),
   twig: async () => (await import('@codemirror/lang-jinja')).jinja(),
+  // A template written over another language — the json, the markdown a
+  // template renders —: the tags of the one coloured over the text of the
+  // other, a placeholder standing where a value will, without breaking it.
+  'jinja-json': async () => (await import('@codemirror/lang-jinja')).jinja({ base: (await import('@codemirror/lang-json')).json() }),
+  'jinja-markdown': async () => (await import('@codemirror/lang-jinja')).jinja({ base: (await import('@codemirror/lang-markdown')).markdown() }),
+  'jinja-html': async () => (await import('@codemirror/lang-jinja')).jinja({ base: (await import('@codemirror/lang-html')).html() }),
+  'jinja-yaml': async () => (await import('@codemirror/lang-jinja')).jinja({ base: (await import('@codemirror/lang-yaml')).yaml() }),
   json: async () => (await import('@codemirror/lang-json')).json(),
   markdown: async () => (await import('@codemirror/lang-markdown')).markdown(),
   md: async () => (await import('@codemirror/lang-markdown')).markdown(),
