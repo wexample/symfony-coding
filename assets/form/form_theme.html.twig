@@ -21,7 +21,6 @@
         {% set placeholder_value = placeholder_key|trans({}, form.vars.translation_domain) %}
     {% endif %}
     {% set frozen = form.vars.disabled ?? false %}
-    {{ block('wex_field_versioned_open') }}
     {{ component(
         render_pass,
         '@WexampleSymfonyCodingBundle/components/code-input',
@@ -39,5 +38,4 @@
             language_map: form.vars.language_map,
         }
     ) }}
-    {{ block('wex_field_versions') }}
 {% endblock %}
