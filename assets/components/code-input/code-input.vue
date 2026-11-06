@@ -36,8 +36,10 @@ export default {
       type: Boolean,
       default: true
     },
-    // What a caller adds of its own — an autocompletion, a linter.
-    extensions: {
+    // What a caller adds to the editor of its own — an autocompletion, a
+    // linter (CodeMirror's extensions; `extensions` is the field's, the
+    // design system's).
+    editorExtensions: {
       type: Array,
       default: () => []
     }
@@ -51,7 +53,7 @@ export default {
       placeholder: this.placeholder || null,
       label: this.label ? this.resolveLabel(this.label) : null,
       wrap: this.wrap,
-      extensions: this.extensions,
+      extensions: this.editorExtensions,
       onChange: (value) => this.$emit('update:modelValue', value)
     });
   },
